@@ -11,8 +11,6 @@
     --green-mid: #2da87f;
     --amber: #b85c00;
     --amber-light: #fff3e0;
-    --red: #c0392b;
-    --red-light: #fdecea;
     --bg: #f7f9f8;
     --card: #ffffff;
     --text: #1a2420;
@@ -22,141 +20,36 @@
     --radius-sm: 8px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  body {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding-bottom: 40px;
-  }
-
-  header {
-    background: var(--green);
-    color: white;
-    padding: 20px 20px 16px;
-    text-align: center;
-  }
-  header h1 { font-size: 20px; font-weight: 700; letter-spacing: .3px; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 40px; }
+  header { background: var(--green); color: white; padding: 20px 20px 16px; text-align: center; }
+  header h1 { font-size: 20px; font-weight: 700; }
   header p { font-size: 13px; opacity: .8; margin-top: 3px; }
-
-  .lang-toggle {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    margin: 16px 20px 0;
-  }
-  .lang-btn {
-    flex: 1;
-    max-width: 140px;
-    padding: 9px 0;
-    border: 1.5px solid var(--green);
-    background: transparent;
-    color: var(--green);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .15s;
-  }
+  .lang-toggle { display: flex; justify-content: center; margin: 16px 20px 0; }
+  .lang-btn { flex: 1; max-width: 140px; padding: 9px 0; border: 1.5px solid var(--green); background: transparent; color: var(--green); font-size: 14px; font-weight: 600; cursor: pointer; transition: .15s; }
   .lang-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
   .lang-btn:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; border-left: none; }
   .lang-btn.active { background: var(--green); color: white; }
-
-  .section {
-    margin: 16px 16px 0;
-    background: var(--card);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    padding: 18px 16px;
-  }
-  .section-title {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
-
+  .section { margin: 16px 16px 0; background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); padding: 18px 16px; }
+  .section-title { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
   .field { margin-bottom: 14px; }
   .field:last-child { margin-bottom: 0; }
-  .field label {
-    display: block;
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-  select {
-    width: 100%;
-    padding: 11px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-family: inherit;
-    background: white;
-    color: var(--text);
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a6b65' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
-  }
+  .field label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+  select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 15px; font-family: inherit; background: white; color: var(--text); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a6b65' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
   select:focus { outline: none; border-color: var(--green); }
-
   .slider-wrap { padding: 4px 0; }
   .slider-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-  .slider-header .val-display {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--green);
-  }
-  input[type=range] {
-    width: 100%;
-    height: 6px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: var(--border);
-    border-radius: 3px;
-    outline: none;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--green);
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(26,122,94,.35);
-  }
-  input[type=range]::-moz-range-thumb {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--green);
-    border: none;
-    cursor: pointer;
-  }
-
-  .metrics {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin: 16px 16px 0;
-  }
-  .metric {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px 10px;
-    text-align: center;
-  }
+  .slider-header .val-display { font-size: 20px; font-weight: 700; color: var(--green); }
+  input[type=range] { width: 100%; height: 6px; -webkit-appearance: none; appearance: none; background: var(--border); border-radius: 3px; outline: none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--green); cursor: pointer; box-shadow: 0 2px 6px rgba(26,122,94,.35); }
+  input[type=range]::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--green); border: none; cursor: pointer; }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 16px 16px 0; }
+  .metric { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 10px; text-align: center; }
   .metric .m-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; line-height: 1.3; }
   .metric .m-val { font-size: 20px; font-weight: 700; }
   .metric.green { background: var(--green-light); border-color: #b2d9cc; }
   .metric.green .m-val { color: var(--green); }
   .metric.amber { background: var(--amber-light); border-color: #f5c996; }
   .metric.amber .m-val { color: var(--amber); }
-
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   tr td { padding: 7px 0; }
   tr td:first-child { color: var(--muted); }
@@ -165,61 +58,25 @@
   tr.grand td { font-size: 16px; font-weight: 700; color: var(--text); }
   tr.quote-row td { color: var(--green); font-size: 16px; font-weight: 700; }
   tr.margin-row td:last-child { color: var(--green-mid); }
-
-  .note {
-    margin: 14px 16px 0;
-    background: #fffbf0;
-    border: 1px solid #f5d98a;
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    font-size: 13px;
-    color: #7a5a00;
-    line-height: 1.6;
-  }
-
-  .clock-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-  }
+  .note { margin: 14px 16px 0; background: #fffbf0; border: 1px solid #f5d98a; border-radius: var(--radius-sm); padding: 12px 14px; font-size: 13px; color: #7a5a00; line-height: 1.6; }
+  .clock-box { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
   .clock-box .clock-label { font-size: 14px; color: var(--muted); }
   .clock-box .clock-val { font-size: 18px; font-weight: 700; color: var(--text); }
-
-  .reset-btn {
-    display: block;
-    width: calc(100% - 32px);
-    margin: 16px 16px 0;
-    padding: 14px;
-    background: var(--green);
-    color: white;
-    border: none;
-    border-radius: var(--radius);
-    font-size: 16px;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-    letter-spacing: .3px;
-  }
+  .reset-btn { display: block; width: calc(100% - 32px); margin: 16px 16px 0; padding: 14px; background: var(--green); color: white; border: none; border-radius: var(--radius); font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; }
   .reset-btn:active { opacity: .85; }
 </style>
-
 </head>
 <body>
-
 <header>
   <h1>🧹 Happy Dee Cleaning</h1>
   <p id="h-sub">ประเมินราคาทำความสะอาดบ้าน</p>
 </header>
-
 <div class="lang-toggle">
   <button class="lang-btn active" onclick="setLang('th')" id="btn-th">ภาษาไทย</button>
   <button class="lang-btn" onclick="setLang('en')" id="btn-en">English</button>
 </div>
-
 <div class="section">
   <div class="section-title" id="lbl-inputs">ข้อมูลงาน</div>
-
   <div class="field">
     <label id="lbl-svc">ประเภทบริการ</label>
     <select id="svc" onchange="calc()">
@@ -227,16 +84,14 @@
       <option value="deep" id="opt-deep">บิ๊กคลีนนิ่ง (Deep Clean)</option>
     </select>
   </div>
-
   <div class="field">
-    <label id="lbl-cond">สภาพห้อง</label>
+    <label id="lbl-cond">สภาพบ้าน</label>
     <select id="cond" onchange="calc()">
       <option value="1.0" id="opt-normal">ปกติ (Normal)</option>
       <option value="1.2" id="opt-dirty">สกปรก (Dirty) +20%</option>
       <option value="1.5" id="opt-vdirty">สกปรกมาก (Very Dirty) +50%</option>
     </select>
   </div>
-
   <div class="field">
     <div class="slider-wrap">
       <div class="slider-header">
@@ -249,7 +104,6 @@
       </div>
     </div>
   </div>
-
   <div class="field">
     <label id="lbl-cleaners">จำนวนแม่บ้าน</label>
     <select id="cleaners" onchange="calc()">
@@ -259,7 +113,6 @@
     </select>
   </div>
 </div>
-
 <div class="metrics">
   <div class="metric">
     <div class="m-label" id="m-lbl-hrs">ชม. งาน</div>
@@ -274,7 +127,6 @@
     <div class="m-val" id="m-quote">—</div>
   </div>
 </div>
-
 <div class="section" style="margin-top:16px">
   <div class="section-title" id="lbl-breakdown">รายละเอียดต้นทุน</div>
   <table>
@@ -287,7 +139,6 @@
     <tr class="margin-row"><td id="b-lbl-margin">กำไรขั้นต้น</td><td id="b-margin">—</td></tr>
   </table>
 </div>
-
 <div class="section" style="margin-top:16px">
   <div class="section-title" id="lbl-time">เวลาอยู่ที่บ้าน</div>
   <div class="clock-box">
@@ -296,166 +147,114 @@
   </div>
   <div style="font-size:12px;color:var(--muted);margin-top:4px" id="clock-note">ชม. งาน = ชม. แม่บ้านทุกคนรวมกัน • เวลาจริง = ชม. งาน ÷ จำนวนแม่บ้าน</div>
 </div>
-
 <div class="note" id="note-text">
   ⚠️ ราคานี้เป็นการประมาณเบื้องต้นเท่านั้น ราคาจริงขึ้นอยู่กับสภาพบ้านจริงที่พบในวันทำงาน<br>
   หากต้องใช้ Grab บวกเพิ่ม ฿150–300
 </div>
-
 <button class="reset-btn" id="reset-btn" onclick="resetForm()">🔄 ล้างค่า / Reset</button>
-
 <script>
 const T = {
   th: {
-    hsub: 'ประเมินราคาทำความสะอาดบ้าน',
-    inputs: 'ข้อมูลงาน',
-    svc: 'ประเภทบริการ',
-    cond: 'สภาพห้อง',
-    sqm: 'ขนาดบ้าน',
-    cleaners: 'จำนวนแม่บ้าน',
-    optReg: 'ทำความสะอาดทั่วไป (Regular)',
-    optDeep: 'บิ๊กคลีนนิ่ง (Deep Clean)',
-    optNormal: 'ปกติ (Normal)',
-    optDirty: 'สกปรก (Dirty) +20%',
-    optVdirty: 'สกปรกมาก (Very Dirty) +50%',
-    opt1c: '1 คน', opt2c: '2 คน', opt3c: '3 คน',
-    mlblHrs: 'ชม. งาน', mlblCost: 'ต้นทุน', mlblQuote: 'ราคาลูกค้า',
-    breakdown: 'รายละเอียดต้นทุน',
-    blabor: 'ค่าแรง (ชม. × ฿120)',
-    bbonus: 'โบนัสคุณภาพ',
-    bchem: 'น้ำยาทำความสะอาด',
-    bwear: 'อุปกรณ์/ค่าเสื่อม',
-    btotal: 'ต้นทุนรวม',
-    bquote: 'ราคาเสนอลูกค้า',
-    bmargin: 'กำไรขั้นต้น',
-    time: 'เวลาอยู่ที่บ้าน',
-    clocklabel: 'เวลาที่ใช้จริง (นาฬิกา)',
-    clocknote: 'ชม. งาน = ชม. แม่บ้านทุกคนรวมกัน • เวลาจริง = ชม. งาน ÷ จำนวนแม่บ้าน',
-    note: '⚠️ ราคานี้เป็นการประมาณเบื้องต้นเท่านั้น ราคาจริงขึ้นอยู่กับสภาพบ้านจริงที่พบในวันทำงาน<br>หากต้องใช้ Grab บวกเพิ่ม ฿150–300',
-    reset: '🔄 ล้างค่า / Reset',
-    sqmunit: 'ตร.ม.',
+    hsub:'ประเมินราคาทำความสะอาดบ้าน',inputs:'ข้อมูลงาน',svc:'ประเภทบริการ',cond:'สภาพบ้าน',sqm:'ขนาดบ้าน',cleaners:'จำนวนแม่บ้าน',
+    optReg:'ทำความสะอาดทั่วไป (Regular)',optDeep:'บิ๊กคลีนนิ่ง (Deep Clean)',
+    optNormal:'ปกติ (Normal)',optDirty:'สกปรก (Dirty) +20%',optVdirty:'สกปรกมาก (Very Dirty) +50%',
+    opt1c:'1 คน',opt2c:'2 คน',opt3c:'3 คน',
+    mlblHrs:'ชม. งาน',mlblCost:'ต้นทุน',mlblQuote:'ราคาลูกค้า',
+    breakdown:'รายละเอียดต้นทุน',blabor:'ค่าแรง (ชม. × ฿120)',bbonus:'โบนัสคุณภาพ',bchem:'น้ำยาทำความสะอาด',bwear:'อุปกรณ์/ค่าเสื่อม',btotal:'ต้นทุนรวม',bquote:'ราคาเสนอลูกค้า',bmargin:'กำไรขั้นต้น',
+    time:'เวลาอยู่ที่บ้าน',clocklabel:'เวลาที่ใช้จริง (นาฬิกา)',clocknote:'ชม. งาน = ชม. แม่บ้านทุกคนรวมกัน • เวลาจริง = ชม. งาน ÷ จำนวนแม่บ้าน',
+    note:'⚠️ ราคานี้เป็นการประมาณเบื้องต้นเท่านั้น ราคาจริงขึ้นอยู่กับสภาพบ้านจริงที่พบในวันทำงาน<br>หากต้องใช้ Grab บวกเพิ่ม ฿150–300',
+    reset:'🔄 ล้างค่า / Reset',sqmunit:'ตร.ม.'
   },
   en: {
-    hsub: 'House cleaning price estimate',
-    inputs: 'Job details',
-    svc: 'Service type',
-    cond: 'Condition',
-    sqm: 'House size',
-    cleaners: 'Cleaners sent',
-    optReg: 'Regular clean',
-    optDeep: 'Deep clean',
-    optNormal: 'Normal',
-    optDirty: 'Dirty +20%',
-    optVdirty: 'Very dirty +50%',
-    opt1c: '1 cleaner', opt2c: '2 cleaners', opt3c: '3 cleaners',
-    mlblHrs: 'Labor hrs', mlblCost: 'Total cost', mlblQuote: 'Quote',
-    breakdown: 'Cost breakdown',
-    blabor: 'Labor (hrs × ฿120)',
-    bbonus: 'Quality bonus',
-    bchem: 'Chemicals',
-    bwear: 'Wear / depreciation',
-    btotal: 'Total cost',
-    bquote: 'Quote to customer',
-    bmargin: 'Gross margin',
-    time: 'Time on site',
-    clocklabel: 'Elapsed clock time',
-    clocknote: 'Labor hrs = all cleaners combined • Clock time = labor hrs ÷ cleaners sent',
-    note: '⚠️ Rough estimate only. Final price depends on actual condition found on the day.<br>Add ฿150–300 if Grab transport is needed.',
-    reset: '🔄 Reset',
-    sqmunit: 'sqm',
+    hsub:'House cleaning price estimate',inputs:'Job details',svc:'Service type',cond:'Condition',sqm:'House size',cleaners:'Cleaners sent',
+    optReg:'Regular clean',optDeep:'Deep clean',optNormal:'Normal',optDirty:'Dirty +20%',optVdirty:'Very dirty +50%',
+    opt1c:'1 cleaner',opt2c:'2 cleaners',opt3c:'3 cleaners',
+    mlblHrs:'Labor hrs',mlblCost:'Total cost',mlblQuote:'Quote',
+    breakdown:'Cost breakdown',blabor:'Labor (hrs × ฿120)',bbonus:'Quality bonus',bchem:'Chemicals',bwear:'Wear / depreciation',btotal:'Total cost',bquote:'Quote to customer',bmargin:'Gross margin',
+    time:'Time on site',clocklabel:'Elapsed clock time',clocknote:'Labor hrs = all cleaners combined • Clock time = labor hrs ÷ cleaners sent',
+    note:'⚠️ Rough estimate only. Final price depends on actual condition found on the day.<br>Add ฿150–300 if Grab transport is needed.',
+    reset:'🔄 Reset',sqmunit:'sqm'
   }
 };
-
-let lang = 'th';
-
-function setLang(l) {
-  lang = l;
-  document.getElementById('btn-th').classList.toggle('active', l==='th');
-  document.getElementById('btn-en').classList.toggle('active', l==='en');
-  const t = T[l];
-  document.getElementById('h-sub').textContent = t.hsub;
-  document.getElementById('lbl-inputs').textContent = t.inputs;
-  document.getElementById('lbl-svc').textContent = t.svc;
-  document.getElementById('lbl-cond').textContent = t.cond;
-  document.getElementById('lbl-sqm').textContent = t.sqm;
-  document.getElementById('lbl-cleaners').textContent = t.cleaners;
-  document.getElementById('opt-reg').textContent = t.optReg;
-  document.getElementById('opt-deep').textContent = t.optDeep;
-  document.getElementById('opt-normal').textContent = t.optNormal;
-  document.getElementById('opt-dirty').textContent = t.optDirty;
-  document.getElementById('opt-vdirty').textContent = t.optVdirty;
-  document.getElementById('opt-1c').textContent = t.opt1c;
-  document.getElementById('opt-2c').textContent = t.opt2c;
-  document.getElementById('opt-3c').textContent = t.opt3c;
-  document.getElementById('m-lbl-hrs').textContent = t.mlblHrs;
-  document.getElementById('m-lbl-cost').textContent = t.mlblCost;
-  document.getElementById('m-lbl-quote').textContent = t.mlblQuote;
-  document.getElementById('lbl-breakdown').textContent = t.breakdown;
-  document.getElementById('b-lbl-labor').textContent = t.blabor;
-  document.getElementById('b-lbl-bonus').textContent = t.bbonus;
-  document.getElementById('b-lbl-chem').textContent = t.bchem;
-  document.getElementById('b-lbl-wear').textContent = t.bwear;
-  document.getElementById('b-lbl-total').textContent = t.btotal;
-  document.getElementById('b-lbl-quote').textContent = t.bquote;
-  document.getElementById('b-lbl-margin').textContent = t.bmargin;
-  document.getElementById('lbl-time').textContent = t.time;
-  document.getElementById('clock-label').textContent = t.clocklabel;
-  document.getElementById('clock-note').textContent = t.clocknote;
-  document.getElementById('note-text').innerHTML = t.note;
-  document.getElementById('reset-btn').textContent = t.reset;
+let lang='th';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-th').classList.toggle('active',l==='th');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  const t=T[l];
+  document.getElementById('h-sub').textContent=t.hsub;
+  document.getElementById('lbl-inputs').textContent=t.inputs;
+  document.getElementById('lbl-svc').textContent=t.svc;
+  document.getElementById('lbl-cond').textContent=t.cond;
+  document.getElementById('lbl-sqm').textContent=t.sqm;
+  document.getElementById('lbl-cleaners').textContent=t.cleaners;
+  document.getElementById('opt-reg').textContent=t.optReg;
+  document.getElementById('opt-deep').textContent=t.optDeep;
+  document.getElementById('opt-normal').textContent=t.optNormal;
+  document.getElementById('opt-dirty').textContent=t.optDirty;
+  document.getElementById('opt-vdirty').textContent=t.optVdirty;
+  document.getElementById('opt-1c').textContent=t.opt1c;
+  document.getElementById('opt-2c').textContent=t.opt2c;
+  document.getElementById('opt-3c').textContent=t.opt3c;
+  document.getElementById('m-lbl-hrs').textContent=t.mlblHrs;
+  document.getElementById('m-lbl-cost').textContent=t.mlblCost;
+  document.getElementById('m-lbl-quote').textContent=t.mlblQuote;
+  document.getElementById('lbl-breakdown').textContent=t.breakdown;
+  document.getElementById('b-lbl-labor').textContent=t.blabor;
+  document.getElementById('b-lbl-bonus').textContent=t.bbonus;
+  document.getElementById('b-lbl-chem').textContent=t.bchem;
+  document.getElementById('b-lbl-wear').textContent=t.bwear;
+  document.getElementById('b-lbl-total').textContent=t.btotal;
+  document.getElementById('b-lbl-quote').textContent=t.bquote;
+  document.getElementById('b-lbl-margin').textContent=t.bmargin;
+  document.getElementById('lbl-time').textContent=t.time;
+  document.getElementById('clock-label').textContent=t.clocklabel;
+  document.getElementById('clock-note').textContent=t.clocknote;
+  document.getElementById('note-text').innerHTML=t.note;
+  document.getElementById('reset-btn').textContent=t.reset;
   calc();
 }
-
-function B(n) { return '฿' + Math.round(n).toLocaleString(); }
-function H(n) { return n.toFixed(1) + 'h'; }
-
-function calc() {
-  const svc = document.getElementById('svc').value;
-  const sqm = parseInt(document.getElementById('sqm').value);
-  const cond = parseFloat(document.getElementById('cond').value);
-  const cleaners = parseInt(document.getElementById('cleaners').value);
-  const unit = T[lang].sqmunit;
-
-  document.getElementById('sqm-out').textContent = sqm;
-
-  const chemRate = svc === 'regular' ? 2.74 : 12.34;
-  const hrsPerSqm = svc === 'regular' ? 0.025 : 0.10;
-  const bonusPerCleaner = 50;
-
-  let baseHrs = sqm * hrsPerSqm * cond;
-  baseHrs = Math.max(baseHrs, svc === 'regular' ? 2 : 6);
-
-  const labor = Math.round(baseHrs * 120);
-  const bonus = bonusPerCleaner * cleaners;
-  const chem = Math.round(sqm * chemRate);
-  const wear = Math.round(43 + sqm * 0.1);
-  const totalCost = labor + bonus + chem + wear;
-  const quote = totalCost * 2;
-  const margin = Math.round((1 - totalCost / quote) * 100);
-  const clockHrs = baseHrs / cleaners;
-
-  document.getElementById('m-hrs').textContent = H(baseHrs);
-  document.getElementById('m-cost').textContent = B(totalCost);
-  document.getElementById('m-quote').textContent = B(quote);
-
-  document.getElementById('b-labor').textContent = B(labor);
-  document.getElementById('b-bonus').textContent = B(bonus);
-  document.getElementById('b-chem').textContent = B(chem);
-  document.getElementById('b-wear').textContent = B(wear);
-  document.getElementById('b-total').textContent = B(totalCost);
-  document.getElementById('b-quote').textContent = B(quote);
-  document.getElementById('b-margin').textContent = margin + '%';
-  document.getElementById('cl-time').textContent = H(clockHrs);
+function B(n){return '฿'+Math.round(n).toLocaleString();}
+function H(n){return n.toFixed(1)+'h';}
+function calc(){
+  const svc=document.getElementById('svc').value;
+  const sqm=parseInt(document.getElementById('sqm').value);
+  const cond=parseFloat(document.getElementById('cond').value);
+  const cleaners=parseInt(document.getElementById('cleaners').value);
+  document.getElementById('sqm-out').textContent=sqm;
+  const chemRate=svc==='regular'?2.74:12.34;
+  const hrsPerSqm=svc==='regular'?0.025:0.10;
+  const houseMultiplier=2.0;
+  const bonusPerCleaner=50;
+  let baseHrs=sqm*hrsPerSqm*cond*houseMultiplier;
+  baseHrs=Math.max(baseHrs,svc==='regular'?3:8);
+  const labor=Math.round(baseHrs*120);
+  const bonus=bonusPerCleaner*cleaners;
+  const chem=Math.round(sqm*chemRate);
+  const wear=Math.round(43+sqm*0.1);
+  const totalCost=labor+bonus+chem+wear;
+  const quote=totalCost*2;
+  const margin=Math.round((1-totalCost/quote)*100);
+  const clockHrs=baseHrs/cleaners;
+  document.getElementById('m-hrs').textContent=H(baseHrs);
+  document.getElementById('m-cost').textContent=B(totalCost);
+  document.getElementById('m-quote').textContent=B(quote);
+  document.getElementById('b-labor').textContent=B(labor);
+  document.getElementById('b-bonus').textContent=B(bonus);
+  document.getElementById('b-chem').textContent=B(chem);
+  document.getElementById('b-wear').textContent=B(wear);
+  document.getElementById('b-total').textContent=B(totalCost);
+  document.getElementById('b-quote').textContent=B(quote);
+  document.getElementById('b-margin').textContent=margin+'%';
+  document.getElementById('cl-time').textContent=H(clockHrs);
 }
-
-function resetForm() {
-  document.getElementById('svc').value = 'regular';
-  document.getElementById('cond').value = '1.0';
-  document.getElementById('sqm').value = 150;
-  document.getElementById('cleaners').value = '2';
+function resetForm(){
+  document.getElementById('svc').value='regular';
+  document.getElementById('cond').value='1.0';
+  document.getElementById('sqm').value=150;
+  document.getElementById('cleaners').value='2';
   calc();
 }
-
 calc();
 </script>
 </body>
